@@ -11,7 +11,7 @@
 
   <body>
     <!--ヘッダーの記述-->
-    <<header class="navbar navbar-fixed-top navbar-inverse">
+    <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
 
         <nav class="nav navbar-nav navbar-left">
@@ -33,13 +33,8 @@
             <% end %>
           </ul>
         </nav>
-
       </div>
     </header>
-    <!--ヘッダーの記述-->
-    <div class="container">
-      <p id="notice"><%= notice %></p> <!--デバイスでnotice設定されているので呼び出してるだけ-->
-
-    </div>
+ <%= yield %>
   </body>
 </html>
