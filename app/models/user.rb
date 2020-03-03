@@ -2,9 +2,11 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable,:validatable
+
   has_many :books
   has_many :favorites
   has_many :favorite_books, through: :favorites, source: :book
+
   attachment :profile_image, destroy: false
 
   #バリデーションは該当するモデルに設定する。エラーにする条件を設定できる。

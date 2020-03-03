@@ -5,12 +5,12 @@ class FavoritesController < ApplicationController
     # buildはnewと同じ意味で、アソシエーションしながらインスタンスをnewする時に形式的に使われる。
     favorite = current_user.favorites.build(book_id: params[:book_id])
     favorite.save
-    redirect_to books_path
+    redirect_back(fallback_location: books_path)
   end
 
   def destroy
     favorite = Favorite.find_by(book_id: params[:book_id], user_id: current_user.id)
     favorite.destroy
-    redirect_to books_path
+    redirect_back(fallback_location: books_path)
   end
 end
