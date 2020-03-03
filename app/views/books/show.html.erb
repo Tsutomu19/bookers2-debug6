@@ -22,6 +22,13 @@
 					</td>
 					<td><%= link_to @book.title, @book %></td>
 					<td><%= @book.body %></td>
+					<% if user_signed_in? %>
+					<% if @book.favorited_by?(current_user) %>
+						<td><%= link_to @book.favorites.count, book_favorites_path(@book.id), method: :delete, class: 'glyphicon glyphicon-heart aria-hidden="true' %></td>
+					<% else %>
+						<td><%= link_to @book.favorites.count, book_favorites_path(@book.id), method: :post, class: 'glyphicon glyphicon-heart-empty aria-hidden="true' %></td>
+					<% end %>
+					<% end %>
 					<% if @user.id == current_user.id %>
 					<td><%= link_to "Edit",edit_book_path(@book), class: "btn-sm btn-success edit_book_#{@book.id}" %></td>
 					<td><%= link_to "Destroy",@book, method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-sm btn-danger destroy_book_#{@book.id}" %></td>
