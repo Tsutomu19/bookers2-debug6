@@ -4,9 +4,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable,:validatable
 
   has_many :books
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
   has_many :favorite_books, through: :favorites, source: :book
-  has_many :post_comments
+  has_many :post_comments, dependent: :destroy
+
 
   attachment :profile_image, destroy: false
 
