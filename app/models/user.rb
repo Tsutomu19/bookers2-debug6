@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :books
   has_many :favorites
   has_many :favorite_books, through: :favorites, source: :book
+  has_many :post_comments
 
   attachment :profile_image, destroy: false
 
