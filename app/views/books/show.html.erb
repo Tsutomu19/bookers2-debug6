@@ -66,7 +66,7 @@
 					<%= c.comment %>
 				</td>
 				<% if @user.id == current_user.id %><!--idが入らないといけないのに。省略されテイル？@book.id -->
-
+						<td><%= link_to "Destroy",book_post_comment_path(c.book_id,c.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-sm btn-danger destroy_book_#{@post_comment.id}" %></td>
 				<% end %>
 			</tr>
 		</table>
