@@ -20,5 +20,5 @@ end
     # つまり、post_comment.user_id = current_user.idが済んだ状態で生成されている。
     # buildはnewと同じ意味で、アソシエーションしながらインスタンスをnewする時に形式的に使われる。
 
-    # @post_comment = PostComment.new(comment_params)
+    # @post_comment = PostComment.new(post_comment_params)
     # @post_comment.user_id = current_user.id
