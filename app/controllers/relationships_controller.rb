@@ -11,3 +11,4 @@ class RelationshipsController < ApplicationController
     redirect_back(fallback_location: users_path)
   end
 end
+
