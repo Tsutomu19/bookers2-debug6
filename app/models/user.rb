@@ -21,6 +21,11 @@ class User < ApplicationRecord
   validates :introduction,
      length: { maximum: 50, message: 'is too long (maximum is 50 characters)' }
 
-
-
+     def self.search(search)
+          if search
+               User.where(['name LIKE ?', "%#{search}%"])
+               else
+               User.all
+               end
+          end
 end

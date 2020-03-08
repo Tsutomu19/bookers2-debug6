@@ -1,6 +1,23 @@
+
+<% if @books.present? %>
 <ul><% @books.each do |book| %>
   <li>
     <%= book.title %>
     <%= book.created_at %>
     <% end %>
- 
+  </li>
+</ul>
+
+<% end %>
+
+<% if @users.present? %>
+<!-- ユーザーの時　-->
+
+<ul><% @users.each do |user| %>
+  <li>
+    <%= user.name %>
+    <%= user.created_at %>
+    <% end %>
+  </li>
+</ul>
+<% end %>
