@@ -18,5 +18,7 @@ Rails.application.routes.draw do
     get :follows, on: :member
     get :followers, on: :member
   end
+  resources :searches,only:[:index]
+  # searchesのindexを表示させる為に書いている
 
 end
